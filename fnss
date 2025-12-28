@@ -1,0 +1,6 @@
+#!/bin/sh
+
+fd -t f . -x file {} \
+  | rg 'ELF.*not stripped' \
+  | cut -d: -f1 \
+  | xargs strip
